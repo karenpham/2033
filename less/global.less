@@ -1,0 +1,713 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+ALL GLOBAL STYLE
+
+1. Layout Style
+2. Responsive Utility
+3. Color Palette
+4. Typography Components
+	1.1 Heading tag
+	3.2 Links & Buttons style
+5. Product Tile
+6. Total Table
+7. Table List View
+8. Form Element Style
+9. Advance Tab
+10. Icons
+11. Product Image Guide
+-------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------------------------------------------------
+1. Layout Style
+-----------------------------------------------------------------------------------------------------------*/
+.wrapper {
+  	.translate3d(0,0,0);
+  	.transition(transform 0.6s);
+	width: 100%;
+  	&.menu-active {
+    	.translate3d(270px,0,0);
+		position: relative;
+		.hamburger {
+			.icon-close {
+				display: block;
+			}
+			.icon-hamburger {
+				display: none;
+			}
+		}
+	}
+	.hamburger {
+		.icon-close {
+			display: none;
+		}
+	}
+}
+.container {
+	width: 100%;
+	
+}
+.inner-container {
+	max-width: 95%;
+	width: 1440px;
+	margin: 0 auto;
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------
+2. Responsive Utility
+-----------------------------------------------------------------------------------------------------------*/
+.desktop-only{
+	display: none;
+	@media (min-width: 768px) {
+		display: block!important;
+	}
+}
+.mobile-only{
+	display: block;
+	@media (min-width: 768px) {
+		display: none!important;
+	}
+}
+/*-----------------------------------------------------------------------------------------------------------
+3. Color Palette
+-----------------------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------------------------------------------------
+4. Main Style & Typography Components
+-----------------------------------------------------------------------------------------------------------*/
+html {
+	width: 100%;
+}
+body{
+    color: #000;
+    font-family: "WorksansRegular";
+    font-size: 62.5%;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
+*{
+	.box-sizing(border-box)
+}
+ul, li { 
+	list-style: none; 
+	margin: 0;
+	padding: 0;
+}
+.clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+	    display: table;
+	    content: "";
+	    // Fixes Opera/contenteditable bug:
+	    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+	    line-height: 0;
+  	}
+  	&:after {
+    	clear: both;
+  	}
+}
+.clr{
+	clear:both;
+}
+img {
+    border: none;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+i {
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+/*-------------------------------------------------
+4.1 Heading tag
+-------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+	.setFont(2,20);
+	color: @ref01;
+	text-transform: uppercase;
+    @media (min-width: 768px) {
+		.setFont(1,24);
+	}
+}
+h2 {
+	.setFont(2,20);
+	color: @color02;
+	text-transform: none;
+    @media (min-width: 768px) {
+		.setFont(2,24);
+	}
+}
+h3 {
+	.setFont(1,14);
+	color: @color02;
+	text-transform: uppercase;
+}
+h4 {
+	.setFont(1,14);
+	color: @color02;
+	text-transform: none;
+}
+h5 {
+	.setFont(5,16);
+	color: @color02;
+	text-transform: uppercase;
+}
+h6 {
+	.setFont(5,16);
+	color: @color02;
+	text-transform: none;
+}
+p {
+	.setFont(6,13);
+	@media (min-width: 768px) {
+		.setFont(6,15);
+	}
+	a {
+		color: @color02;
+	}
+}
+/*-------------------------------------------------
+4.2 Link style
+-------------------------------------------------*/
+a {
+	color: @color02;
+	text-decoration: none;	
+	.transition(all 0.2s ease);
+}
+a, 
+input[type="button"], 
+input[type="submit"],
+button {
+	cursor: pointer;
+	&:focus {
+		 outline: none;
+	}
+	&.button {
+		.setFont(1,13);
+		background: none;
+		border: 1px solid @color02;
+		color: @color02;
+		display: inline-block;
+		height: 30px;
+		letter-spacing: 1px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		width: auto;
+		&:hover {
+			@media (min-width: 1025px) {
+				.transition-duration(0.4s);
+				background: @color02;
+				color: @color01;	
+			}	
+		}
+		&.white {
+			background: @color01;
+			&:hover {
+				@media (min-width: 1025px) {
+					.transition-duration(0.4s);
+					background: @color02;
+					color: @color01;	
+				}
+			}
+		}
+		&.black {
+			border: 1px solid @color02;
+			background: @color02;
+			color: @color01;
+			&:hover {
+				@media (min-width: 1025px) {
+					.transition-duration(0.4s);
+					background: @color01;
+					color: @color02;
+				}
+			}
+		}	
+	}
+}
+a {
+	&.button {
+		line-height: 30px;
+		padding: 0 30px;
+	}
+}
+input[type="button"], 
+input[type="submit"],
+button {
+	&.button {
+		.border-radius(0);
+		line-height: 28px;
+		outline: none;
+		padding: 0 30px;
+	}
+}
+button[disabled], html input[disabled] {
+	cursor: default !important;
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+5. Product tile
+-----------------------------------------------------------------------------------------------------------*/
+.product-tile {
+	padding: 0 0 25px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	@media (min-width: 768px) {
+		text-align: left;
+	}
+	@media (min-width: 1025px) {
+		width: 260px;
+	}
+	.product-tag {
+		.setFont(5,13);
+		color: @color01;
+		height: 20px;
+		line-height: 20px;
+		left: 50%;
+		margin-left: -30px;
+		position: absolute;
+		top: -20px;
+		text-align: center;
+		text-transform: uppercase;
+		width: 60px;
+		&.sale {
+			background: @ref02;
+		}
+		&.new {
+			background: @colorxx;
+		}
+	}
+	.product-image {
+		margin: 0 0 20px;
+		position: relative;
+		img {
+			width: 100%;
+			@media (min-width: 1025px) {
+				max-width: 260px;
+			}
+		}
+	}
+	.product-name {
+		height: auto;
+		text-align: center;
+		a {
+			.setFont(6,13);
+			color: @color02;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+	}
+	.product-category {
+		.setSize(12);
+		color: @color02;
+		padding: 5px 0 10px;
+		text-align: center;
+	}
+	.product-pricing {
+		text-align: center;
+		.product-standard-price {
+			.setFont(5,14);
+			color: @gray02;
+			display: inline-block;
+			position: relative;
+			text-decoration: line-through;
+    		white-space: nowrap;
+		}
+		.product-sales-price {
+			.setFont(5,14);
+			color: @color02;
+			display: inline-block;
+			margin-left: 10px;
+		}
+	}
+	.product-promo {
+		.setFont(5,12);
+		color: @color02;
+		padding: 5px 0;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+	}
+}
+/*-----------------------------------------------------------------------------------------------------------
+6. Total Table
+-----------------------------------------------------------------------------------------------------------*/
+.order-table {
+	width: 100%;
+	td {
+		.setFont(5,14);
+		padding: 5px 0;
+		width: 50%;
+	}
+	tr.order-total {
+		td {
+			.setSize(16);
+			border-top: 1px solid @gray02;
+		}
+	}
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+7. Table List View
+-----------------------------------------------------------------------------------------------------------*/
+table.list-table {
+	.setSize(12);
+	border-bottom: 1px solid @gray03;
+	width: 100%;
+	th, td {
+		clear: both;
+		float: left;
+		padding: 5px;
+		width: 100%;
+		&:first-child {
+			border-top: 1px solid @gray03;
+		}
+	}
+	th {
+		display: none;
+	}
+	@media (min-width: 768px) {
+		th, td {
+			border-top: 1px solid @gray03;
+			clear: none;
+			float: none;
+			padding: 10px 0;
+			width: 20%;
+		}
+		th {
+			.setSize(14);
+			display: table-cell;
+			font-weight: normal;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+/*-----------------------------------------------------------------------------------------------------------
+8. Form Element Style
+-----------------------------------------------------------------------------------------------------------*/
+.field {
+	margin: 0 0 15px 0;
+	& > label {
+		.setFont(7,12);
+		color: @color02;
+		font-weight: normal;
+	}
+	.field-item {
+		.error-msg {
+			display: none;
+		}
+	}
+	&.error {
+		.field-item {
+			.error-msg {
+				.setFont(7,11);
+				color: @color00;
+				display: block;
+			}
+			input[type="text"], 
+			input[type="number"],
+			input[type="password"],
+			input[type="email"],
+			textarea {
+				border: 1px solid @color00;
+			}
+			.checkbox-outline,
+			.radio-outline {
+				label {
+					&:before {
+						border: 1px solid @color00;
+					}
+				}
+			}
+			.selectric {
+				border: 1px solid @color00;
+			}
+		}
+	}
+}
+textarea:focus, input:focus {
+    outline: 0;
+}
+
+
+input[type="text"], 
+input[type="number"],
+input[type="password"],
+input[type="email"],
+textarea {
+	.setFont(7,12);
+	.border-radius(0);
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	border: 1px solid @gray04;
+	color: @color02!important;
+	width: 100%;
+	&:focus {
+		border: 1px solid @color02;
+		color: @color02;
+	}
+	&[placeholder] {
+		color: @gray02;
+		opacity: 1;
+	}
+	&:-moz-placeholder {
+	    /* FF 4-18 */
+	    color: @gray02;
+	    opacity: 1;
+	}
+	&::-webkit-input-placeholder {
+	    color: @gray02;
+	    opacity: 1;
+	}
+	&::-moz-placeholder {
+	    /* FF 19+ */
+	    color: @gray02;
+	    opacity: 1;
+	}
+	&:-ms-input-placeholder {
+	    /* IE 10+ */
+	    color: @gray02;
+	    opacity: 1;
+	}
+	&.error {
+		border: 1px solid @color00;
+		color: @color00;
+	}
+	& + .error {
+		color: @color00;
+		display: block;
+		margin-top: 5px;
+	}
+	&:-webkit-autofill {
+		-webkit-box-shadow: inset 0 0 0px 9999px white;
+	}
+}
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"] {
+	height: 30px;
+	line-height: normal;
+	padding: 0 15px;
+}
+textarea {
+	height: 100px;
+	padding: 5px 15px;
+}
+
+
+
+input[type="checkbox"],
+input[type="radio"] {
+	opacity: 0;
+	position: absolute;
+}
+	
+.checkbox-outline {
+	position: relative;
+	label {
+		.setFont(7,12);
+		color: @color02;
+		line-height: 15px;
+		padding: 0 0 0 28px;
+		&:before {
+			border: 1px solid @gray02;
+			background: @color01;
+			color: @color01;
+			content: "\e80c";
+			display: inline-block;
+			font-family: "fontello";
+			font-size: 8px;
+			height: 15px;
+			left: 0;
+			line-height: 15px;
+			position: absolute;
+			text-align:center;
+			width: 15px;
+		}
+	}
+	input[type="checkbox"] {
+		&:checked {
+			& + label {
+				&:before {
+					color: @color02;
+				}
+			}
+		}
+	}
+	.error-msg {
+		padding-left: 28px;
+	}
+}
+.radio-outline {
+	display: inline-block;
+	position: relative;
+	&:first-child {
+		margin-right: 20px;
+	}
+	label {
+		.setFont(7,12);
+		color: @color02;
+		line-height: 15px;
+		padding: 0 0 0 28px;
+		&:before {
+			.setSize(9px);
+			.border-radius(8px);
+			border: 1px solid @gray02;
+			background: @color01;
+			color: @color01;
+			content: "\e828";
+			font-family: fontello;
+			display: inline-block;
+			height: 15px;
+			left: 0;
+			line-height: 16px;
+			position: absolute;
+			text-align:center;
+			width: 15px;
+		}
+	}
+	input[type="radio"] {
+		&:checked {
+			& + label {
+				&:before {
+					color: @color02;
+				}
+			}
+		}
+	}
+	.error-msg {
+		padding-left: 28px;
+	}
+}
+
+
+.selectric {
+	background: @color01;
+	border: 1px solid @gray04;
+	.label {
+		.setFont(7,12);
+		color: @color02;
+		height: 30px;
+		line-height: 30px;
+		margin: 0 30px 0 15px;
+	}
+	.button {
+		background-color: transparent;
+		height: 30px;
+		width: 30px;
+		&:after  {
+			.setSize(6);
+			border: none;
+			color: @color02;
+			content: "\e804";
+			font-family: fontello;
+			right: 20px;
+		}
+	}
+}
+
+form {
+	&.horizontal {
+		.field {
+			margin: 0 0 20px 0;
+			.clearfix;
+			& > label {
+				line-height: 30px;
+				float: left;
+				width: 30%;
+			}
+			.field-item {
+				float: left;
+				position: relative;
+				width: 70%;
+			}
+			&.error {
+				.field-item {
+					.error-msg {
+						position: absolute;
+						bottom: -13px;
+					}
+				}
+			}
+			&.field-checkbox,
+			&.field-radio {
+				margin-left: 30%;
+			}
+		}
+	}
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------
+9. Advance Tab
+-----------------------------------------------------------------------------------------------------------*/
+ul.breadcrumb {
+	li {
+		.setFont(4,11);
+		display: inline-block;
+		position: relative;
+		&:last-child {
+			font-weight: normal;
+			&:after {
+				display: none;
+			}
+		}
+		&:after {
+			.setFont(5,11);
+			color: @color02;
+			content: "/";
+			right: 5px;
+			position: absolute;
+			top: 0px;
+		}
+	}
+	a {
+		.setFont(5,11);
+		color: @color02;
+		padding: 0 20px 0 0;
+		text-decoration: none;
+	}
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------------
+10. Icons
+-----------------------------------------------------------------------------------------------------------*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	margin-left: 0;
+	margin-right: 0;
+	width: auto;
+}
+[class^="icon-"] {
+	em {
+		.setSize(0);
+		line-height: 0;
+	}
+}
+
+/*-----------------------------------------------------------------------------------------------------------
+11. Image Guide
+-----------------------------------------------------------------------------------------------------------*/
+
