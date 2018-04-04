@@ -1,0 +1,68 @@
+// banner
+.banner {
+    position: relative;
+    img {
+        max-width: 100%;
+    }
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+    figcaption {
+        .setFont(4);
+        position: absolute;
+        top: 10px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        color: @color01;
+        letter-spacing: 0.1em;
+        h3 {
+            .setFont(4, 16);
+            color: @color01;
+            max-width: 90%;
+            margin: 0 auto;
+            br {
+                display: none;
+            }
+        }
+        .sig {
+            .setSize(12);
+            padding-top: 15px;
+            display: block;
+            text-transform: uppercase;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .banner {
+        figcaption {
+            top: 50px;
+            h3 {
+                .setSize(20);
+                max-width: 75%;
+            }
+            .sig {
+                .setSize(15);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .banner {
+        figcaption {
+            h3 {
+                .setSize(30);
+                max-width: 60%;
+                br {
+                    display: inline;
+                }
+            }
+            .sig {
+                .setSize(18);
+            }
+        }
+    }
+}

@@ -20,56 +20,51 @@ MIXIN FOR LESS
     font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
     font-size: ~"@{remValue}rem";
 }
-
-.setFont(@fontName, @fontSize) when (@fontName = 1) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'RalewayRegular';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
+.setFont(@fontName, @fontSize: null) when (@fontName = 1) {
+    font-family: 'bourgeois_bold';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
 }
 
-.setFont(@fontName, @fontSize) when (@fontName = 2) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'RalewayLight';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
+.setFont(@fontName, @fontSize: null) when (@fontName = 2) {
+    font-family: 'bourgeois_med';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
 }
-.setFont(@fontName, @fontSize) when (@fontName = 3) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'WorksansBold';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
+.setFont(@fontName, @fontSize: null) when (@fontName = 3) {
+    font-family: 'aero_matics_regular';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
 }
-.setFont(@fontName, @fontSize) when (@fontName = 4) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'WorksansSemiBold';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
+.setFont(@fontName, @fontSize: null) when (@fontName = 4) {
+    font-family: 'aero_matics_light_regular';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
 }
-.setFont(@fontName, @fontSize) when (@fontName = 5) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'WorksansMedium';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
-}
-.setFont(@fontName, @fontSize) when (@fontName = 6) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'WorksansRegular';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
-}
-.setFont(@fontName, @fontSize) when (@fontName = 7) {
-    @unitlessSize: unit(@fontSize);
-    @remValue: @unitlessSize / 16;
-    font-family: 'WorksansLight';
-    font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
-    font-size: ~"@{remValue}rem";
+.setFont(@fontName, @fontSize: null) when (@fontName = 5) {
+    font-family: 'aero_matics_light_italic';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
 }
 
 /*-----------------------------------------------------------------------------------------------------------
@@ -80,16 +75,13 @@ MIXIN FOR LESS
 @color01:       #ffffff;
 @color02:       #000000;
 
-@ref01:         #cd2028;
-@ref02:         #f2001e;
-
-@gray01:        #666666;
-@gray02:        #999999;
-@gray03:        #bbbbbb;
-@gray04:        #e3e3e3;
-@gray05:        #eeeeee;
-@gray06:        #f7f7f7;
-@green:        green;
+@gray01:        #27272d;
+@gray02:        #5f605f;
+@gray03:        #08080f;
+@gray04:        #eeeeee;
+@gray05:        #444444;
+@gray06:        #26262c;
+@green:        #aecb44;
 
 
 @color-sg-1:    #ffeece; /*for style guide*/
