@@ -48,7 +48,10 @@ ALL GLOBAL STYLE
 }
 .container {
 	width: 100%;
-	padding-bottom: 80px;
+	padding-bottom: 40px;
+	@media (min-width: 1024px) {
+		padding-bottom: 80px;
+	}
 }
 .inner-container {
 	max-width: 95%;
@@ -148,7 +151,7 @@ h2 {
 	color: @color02;
 	text-transform: none;
     @media (min-width: 768px) {
-		.setFont(2,24);
+		.setFont(1,24);
 	}
 }
 h3 {
@@ -177,6 +180,10 @@ p {
 	a {
 		color: @color02;
 	}
+}
+em {
+	.setFont(5);
+	font-style: normal;
 }
 /*-------------------------------------------------
 4.2 Link style
@@ -208,6 +215,32 @@ button {
 }
 button[disabled], html input[disabled] {
 	cursor: default !important;
+}
+
+.btn {
+	.setSize(15);
+	background: @green02;
+	color: @color01;
+	display: inline-block;
+	padding: 8px 15px 6px;
+	text-transform: uppercase;
+	&.spec-font {
+		.setFont(1);
+	}
+	span {
+		.setFont(1);
+	}
+	@media screen and (max-width: 340px) {
+		.setSize(12);
+	}
+	@media screen and (min-width: 768px) {
+		.setSize(18);
+		padding: 10px 15px 8px;
+	}
+	@media screen and (min-width: 1280px) {
+		.setSize(26);
+		padding: 15px 25px 13px;
+	}
 }
 
 /*-----------------------------------------------------------------------------------------------------------

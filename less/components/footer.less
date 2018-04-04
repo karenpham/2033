@@ -6,13 +6,13 @@
 .footer-top {
     background: @gray04;
     border-top: 1px solid #dededf;
-    padding: 50px 10px;
+    padding: 20px 10px;
     h4 {
-        .setFont(2, 60);
+        .setFont(2, 30);
         color: @gray05;
     }
     .note {
-        .setSize(20);
+        .setSize(15);
         display: block;
         padding: 5px 0 18px;
     }
@@ -38,6 +38,7 @@
         border-collapse: separate;
         .form-control {
             .setFont(3, 19);
+            .border-radius(3px);
             border: 1px solid #dddde0;
             position: relative;
             z-index: 2;
@@ -82,17 +83,20 @@
         .setFont(1);
         text-transform: uppercase;
     }
+    img {
+        max-width: 110px;
+    }
 }
 
 // .footer-social
 .footer-social {
     border-bottom: 1px solid @gray06;
     border-top: 1px solid @gray06;
-    padding: 15px 0;
+    padding: 15px 0 5px;
     li {
         display: inline-block;
         text-transform: uppercase;
-        padding: 0 15px;
+        padding: 0 15px 10px;
         a {
             .opacity(30);
             .setFont(1);
@@ -102,6 +106,31 @@
             i {
                 padding-right: 3px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-social {
+        a {
+            .setSize(14);
+        }
+        li {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+
+    .footer-link {
+        padding: 25px 0 30px;
+        li {
+            padding: 0 5px;
+            a {
+                .setSize(14);
+            }
+        }
+        img {
+            max-width: 60px;
         }
     }
 }
@@ -117,4 +146,14 @@
             width: 135px;
         }
     }
+    .footer-top {
+        padding: 50px 10px;
+        h4 {
+            .setSize(60);
+        }
+        .note {
+            .setSize(20);
+        }
+    }
+
 }

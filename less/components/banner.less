@@ -1,8 +1,10 @@
 // banner
 .banner {
+    color: @color01;
     position: relative;
+    z-index: 10;
     img {
-        max-width: 100%;
+        width: 100%;
     }
     figure {
         margin: 0;
@@ -17,20 +19,42 @@
         right: 0;
         color: @color01;
         letter-spacing: 0.1em;
+        z-index: 15;
+        h2 {
+            .setFont(3, 22);
+            color: @color01;
+            padding-bottom: 6px;
+        }
         h3 {
             .setFont(4, 16);
             color: @color01;
             max-width: 90%;
-            margin: 0 auto;
+            margin: 0 auto 15px;
             br {
                 display: none;
             }
         }
         .sig {
             .setSize(12);
-            padding-top: 15px;
             display: block;
             text-transform: uppercase;
+        }
+    }
+}
+@media screen and (max-width: 340px) {
+    .banner {
+        figcaption {
+            top: 5px;
+            h2 {
+                .setSize(19);
+            }
+            h3 {
+                .setSize(14);
+                margin-bottom: 5px;
+            }
+            .sig {
+                .setSize(13);
+            }
         }
     }
 }
@@ -39,6 +63,9 @@
     .banner {
         figcaption {
             top: 50px;
+            h2 {
+                .setSize(26);
+            }
             h3 {
                 .setSize(20);
                 max-width: 75%;
@@ -53,8 +80,12 @@
 @media screen and (min-width: 1280px) {
     .banner {
         figcaption {
+            h2 {
+                .setSize(72);
+            }
             h3 {
                 .setSize(30);
+                line-height: 1.4;
                 max-width: 60%;
                 br {
                     display: inline;
