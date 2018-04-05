@@ -160,6 +160,7 @@
             position: relative;
             line-height: 1;
             padding-bottom: 10px;
+            margin-left: 40px;
             &:before {
                 .setSize(17);
                 content: '\e804';
@@ -208,12 +209,14 @@
         .flex-wrap(wrap);
         .highlight-item {
             width: 50%;
-            padding: 0 10px;
+            padding: 0 10px 20px;
+        }
+        p {
+            .setSize(20);
         }
     }
 
 	.timeline {
-        padding-top: 20px;
         ul {
             padding: 0 25px 40px;
             &:before {
@@ -221,6 +224,11 @@
             }
         }
         li {
+            margin-bottom: 0;
+            .year {
+                width: 50%;
+                margin-left: 0;
+            }
             .detail {
                 width: 50%;
             }
@@ -235,12 +243,16 @@
                     padding-right: 25px;
                     & + .detail {
                         text-align: left;
+                        padding-left: 25px;
+                        padding-right: 0;
                     }
                 }
                 .year {
+                    padding-right: 25px;
+                    text-align: right;
                     &:before {
                         left: auto;
-                        right: -26px;
+                        right: -1px;
                         content: '\e805';
                     }
                 }
@@ -250,17 +262,32 @@
                     float: right;
                     padding-right: 0;
                     padding-left: 25px;
+                    clear: both;
+                }
+                .year {
+                    padding-left: 25px;
+                    float: right;
+                    &:before {
+                        left: 1px;
+                    }
                 }
             }
             &.special {
-                .detail {
-                    &:nth-child(2n) {
-                        float: left;
-                        padding-left: 25px;
-                    }
-                    &:nth-child(2n+1) {
-                        float: right;
-                        padding-left: 25px;
+                .wrap-detail {
+                    .detail {
+                        &:first-child {
+                            float: left;
+                            padding-right: 25px;
+                            padding-left: 0;
+                            text-align: right;
+                        }
+                        &:first-child + .detail {
+                            float: right;
+                            padding-left: 25px;
+                            padding-right: 0;
+                            text-align: left;
+                            clear: none;
+                        }
                     }
                 }
             }
@@ -278,9 +305,6 @@
     .highlight-list {
         .highlight-item {
             width: 25%;
-        }
-        p {
-            .setSize(24);
         }
     }
 	.timeline {
@@ -305,6 +329,9 @@
 @media (min-width: 1280px) {
     .highlight-list {
         padding-bottom: 40px;
+        p {
+            .setSize(24);
+        }
     }
     .highlight-section {
         h2 {
@@ -347,13 +374,13 @@
                     padding-right: 0;
                 }
             }
-            &.special {
-                .detail {
-                    &:nth-child(2n) {
-                        padding-left: 0;
-                    }
-                }
-            }
+            // &.special {
+            //     .detail {
+            //         &:nth-child(2n) {
+            //             padding-left: 0;
+            //         }
+            //     }
+            // }
         }
     }
 }

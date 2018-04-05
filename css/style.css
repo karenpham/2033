@@ -1790,6 +1790,7 @@ input[type="radio"] {
   position: relative;
   line-height: 1;
   padding-bottom: 10px;
+  margin-left: 40px;
 }
 .timeline li .year:before {
   font-size: 17px;
@@ -1852,16 +1853,24 @@ input[type="radio"] {
   }
   .highlight-list .highlight-item {
     width: 50%;
-    padding: 0 10px;
+    padding: 0 10px 20px;
   }
-  .timeline {
-    padding-top: 20px;
+  .highlight-list p {
+    font-size: 20px;
+    font-size: 1.25rem;
   }
   .timeline ul {
     padding: 0 25px 40px;
   }
   .timeline ul:before {
     left: 50%;
+  }
+  .timeline li {
+    margin-bottom: 0;
+  }
+  .timeline li .year {
+    width: 50%;
+    margin-left: 0;
   }
   .timeline li .detail {
     width: 50%;
@@ -1877,24 +1886,43 @@ input[type="radio"] {
   }
   .timeline li:nth-child(odd) .detail + .detail {
     text-align: left;
+    padding-left: 25px;
+    padding-right: 0;
+  }
+  .timeline li:nth-child(odd) .year {
+    padding-right: 25px;
+    text-align: right;
   }
   .timeline li:nth-child(odd) .year:before {
     left: auto;
-    right: -26px;
+    right: -1px;
     content: '\e805';
   }
   .timeline li:nth-child(even) .detail {
     float: right;
     padding-right: 0;
     padding-left: 25px;
+    clear: both;
   }
-  .timeline li.special .detail:nth-child(2n) {
-    float: left;
+  .timeline li:nth-child(even) .year {
     padding-left: 25px;
+    float: right;
   }
-  .timeline li.special .detail:nth-child(2n+1) {
+  .timeline li:nth-child(even) .year:before {
+    left: 1px;
+  }
+  .timeline li.special .wrap-detail .detail:first-child {
+    float: left;
+    padding-right: 25px;
+    padding-left: 0;
+    text-align: right;
+  }
+  .timeline li.special .wrap-detail .detail:first-child + .detail {
     float: right;
     padding-left: 25px;
+    padding-right: 0;
+    text-align: left;
+    clear: none;
   }
   .timeline li .year:before {
     left: -24px;
@@ -1904,10 +1932,6 @@ input[type="radio"] {
 @media (min-width: 1024px) {
   .highlight-list .highlight-item {
     width: 25%;
-  }
-  .highlight-list p {
-    font-size: 24px;
-    font-size: 1.5rem;
   }
   .timeline li {
     min-height: 90px;
@@ -1926,6 +1950,10 @@ input[type="radio"] {
 @media (min-width: 1280px) {
   .highlight-list {
     padding-bottom: 40px;
+  }
+  .highlight-list p {
+    font-size: 24px;
+    font-size: 1.5rem;
   }
   .highlight-section h2 {
     font-size: 26px;
@@ -1964,9 +1992,6 @@ input[type="radio"] {
   }
   .timeline li:nth-child(even) .detail {
     padding-right: 0;
-  }
-  .timeline li.special .detail:nth-child(2n) {
-    padding-left: 0;
   }
 }
 .container {
