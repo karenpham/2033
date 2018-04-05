@@ -46,6 +46,11 @@
         &:last-child {
             border-bottom: none;
         }
+        &.active {
+            a {
+                color: @green;
+            }
+        }
     }
 }
 
@@ -173,11 +178,6 @@
             padding: 0 20px;
             border-right: 2px solid @gray01;
             border-bottom: none;
-            &.active {
-                a {
-                    color: @green;
-                }
-            }
             &:last-child {
                 border-right: none;
                 padding-right: 0;

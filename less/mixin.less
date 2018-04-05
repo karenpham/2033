@@ -66,6 +66,15 @@ MIXIN FOR LESS
         font-size: ~"@{remValue}rem";
     }
 }
+.setFont(@fontName, @fontSize: null) when (@fontName = 6) {
+    font-family: 'aero_matics_bold';
+    & when not (@fontSize = null) {
+        @unitlessSize: unit(@fontSize);
+        @remValue: @unitlessSize / 16;
+        font-size: ~"@{unitlessSize}px"; // Unsupported browser fallback
+        font-size: ~"@{remValue}rem";
+    }
+}
 
 /*-----------------------------------------------------------------------------------------------------------
 2. Define colors

@@ -2,7 +2,15 @@
 .banner {
     color: @color01;
     position: relative;
+    overflow: hidden;
     z-index: 10;
+    .slick {
+        position: relative;
+        display: block;
+    }
+    .item {
+        float: left;
+    }
     img {
         width: 100%;
     }
@@ -20,12 +28,13 @@
         color: @color01;
         letter-spacing: 0.1em;
         z-index: 15;
-        h2 {
+        strong {
             .setFont(3, 22);
             color: @color01;
             padding-bottom: 6px;
+            display: block;
         }
-        h3 {
+        p {
             .setFont(4, 16);
             color: @color01;
             max-width: 90%;
@@ -45,10 +54,10 @@
     .banner {
         figcaption {
             top: 5px;
-            h2 {
+            strong {
                 .setSize(19);
             }
-            h3 {
+            p {
                 .setSize(14);
                 margin-bottom: 5px;
             }
@@ -63,10 +72,10 @@
     .banner {
         figcaption {
             top: 50px;
-            h2 {
+            strong {
                 .setSize(26);
             }
-            h3 {
+            p {
                 .setSize(20);
                 max-width: 75%;
             }
@@ -80,10 +89,10 @@
 @media screen and (min-width: 1280px) {
     .banner {
         figcaption {
-            h2 {
+            strong {
                 .setSize(72);
             }
-            h3 {
+            p {
                 .setSize(30);
                 line-height: 1.4;
                 max-width: 60%;
